@@ -20,6 +20,7 @@ create_tower <- function(app) {
 #' @title Print a tower
 #' @description Print a tower
 #' @param x A tower
+#' @param ... Ignored arguments (for compatibility with print)
 #' @export
 print.tower <- function(x, ...) {
   cat(
