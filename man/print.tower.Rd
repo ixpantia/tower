@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{A tower}
+
+\item{...}{Ignored arguments (for compatibility with print)}
 }
 \description{
 Print a tower
