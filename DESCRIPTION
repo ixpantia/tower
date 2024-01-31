@@ -1,12 +1,17 @@
 Package: tower
-Title: What the Package Does (One Line, Title Case)
+Title: Easy middle ware library for Shiny
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    c(person(given = "ixpantia, SRL",
+             role = "cph",
+             email = "hola@ixpantia.com"),
+      person("Andres", "Quintero", , "andres@ixpantia.com", role = c("aut", "cre")))
+Description: The best way to implement middle ware for Shiny Applications. Tower
+    is designed to make implementing behavior on top of Shiny easy with a layering
+    model for incoming HTTP requests and server sessions. Tower is a very minimal
+    package with little overhead, it is mainly meant for other package developers
+    to implement new behavior.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
