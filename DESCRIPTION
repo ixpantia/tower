@@ -1,14 +1,14 @@
 Package: tower
-Title: Easy Middle Ware Library for Shiny
+Title: Easy Middle Ware Library for 'shiny'
 Version: 0.1.0
 Authors@R: 
     c(person(given = "ixpantia, SRL",
              role = "cph",
              email = "hola@ixpantia.com"),
       person("Andres", "Quintero", , "andres@ixpantia.com", role = c("aut", "cre")))
-Description: The best way to implement middle ware for Shiny Applications. Tower
-    is designed to make implementing behavior on top of Shiny easy with a layering
-    model for incoming HTTP requests and server sessions. Tower is a very minimal
+Description: The best way to implement middle ware for 'shiny' Applications. 'tower'
+    is designed to make implementing behavior on top of 'shiny' easy with a layering
+    model for incoming HTTP requests and server sessions. 'tower' is a very minimal
     package with little overhead, it is mainly meant for other package developers
     to implement new behavior.
 License: MIT + file LICENSE
@@ -16,9 +16,13 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
-    compiler
+    compiler,
+    glue,
+    purrr,
+    stringr,
+    curl,
+    jsonlite
 Suggests: 
     testthat (>= 3.0.0),
-    shiny,
-    stringr
+    shiny
 Config/testthat/edition: 3

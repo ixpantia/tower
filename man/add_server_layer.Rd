@@ -19,7 +19,7 @@ The tower with the layer added
 }
 \description{
 Add a server layer to a tower. This layer
-will run before the Shiny app's server function. This
+will run before the 'shiny' app's server function. This
 is useful for adding custom logic to the server function
 without modifying the original server function.
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/service.R
 \name{build_tower}
 \alias{build_tower}
-\title{Build a Shiny app from a tower}
+\title{Build a 'shiny' app from a tower}
 \usage{
 build_tower(tower)
 }
@@ -10,9 +10,9 @@ build_tower(tower)
 \item{tower}{A tower}
 }
 \value{
-A Shiny app object
+A 'shiny' app object that can be started
 }
 \description{
-Build a Shiny app from a tower. This will create
-a new Shiny app with the specified layers added.
+Build a 'shiny' app from a tower. This will create
+a new 'shiny' app with the specified layers added.
 }

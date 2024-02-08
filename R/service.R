@@ -3,7 +3,7 @@ compiler_options <- list(optimize = 3L)
 
 #' @title Create a new tower
 #' @description Create a new tower to build upon.
-#' @param app A shiny app object
+#' @param app A 'shiny' app object
 #' @return A new tower
 #' @export
 create_tower <- function(app) {
@@ -31,7 +31,7 @@ print.tower <- function(x, ...) {
 
 #' @title Add an HTTP layer to a tower
 #' @description Add an HTTP layer to a tower. This layer
-#'   will be called before the Shiny app's httpHandler.
+#'   will be called before the 'shiny' app's httpHandler.
 #' @param tower A tower
 #' @param layer A function that takes a request and returns either
 #'   a response or NULL. NULL indicates that the layer did not
@@ -50,7 +50,7 @@ add_http_layer <- function(tower, layer) {
 
 #' @title Add a server layer to a tower
 #' @description Add a server layer to a tower. This layer
-#'   will run before the Shiny app's server function. This
+#'   will run before the 'shiny' app's server function. This
 #'   is useful for adding custom logic to the server function
 #'  without modifying the original server function.
 #' @param tower A tower
@@ -112,11 +112,11 @@ build_server <- function(tower) {
 
 }
 
-#' @title Build a Shiny app from a tower
-#' @description Build a Shiny app from a tower. This will create
-#'   a new Shiny app with the specified layers added.
+#' @title Build a 'shiny' app from a tower
+#' @description Build a 'shiny' app from a tower. This will create
+#'   a new 'shiny' app with the specified layers added.
 #' @param tower A tower
-#' @return A Shiny app object
+#' @return A 'shiny' app object that can be started
 #' @export
 build_tower <- function(tower) {
   app <- tower$app
