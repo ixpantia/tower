@@ -7,7 +7,7 @@
 create_tower(app)
 }
 \arguments{
-\item{app}{A shiny app object}
+\item{app}{A 'shiny' app object}
 }
 \value{
 A new tower

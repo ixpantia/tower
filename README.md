@@ -37,34 +37,28 @@ library(shiny)
 library(tower)
 
 # Counter environment
-COUNTER <- new.env()
-COUNTER$counter <- 0
+global_counter <- new.env()
+global_counter$count <- 0
 
 # Middleware to increment the counter
 increment_counter <- function(req) {
-  if (req$PATH_INFO == "/increment") {
-    COUNTER$counter <- COUNTER$counter + 1
-    return(
-      httpResponse(
-        200,
-        "text/plain",
-        paste("Counter is now", COUNTER$counter)
-      )
-    )
-  }
+  global_counter$count <- global_counter$count + 1
+  response_builder() |>
+    add_body(paste("Counter is now", global_counter$count)) |>
+    build_response()
 }
 
-# A very empty Shiny app (not necessary for the demo)
+# A very empty Shiny app (not necesarry for the demo)
 ui <- fluidPage()
 server <- function(input, output, session) {}
 
 shinyApp(ui, server) |>
   create_tower() |>
-  add_http_layer(increment_counter) |>
+  add_get_route("/counter", increment_counter) |>
   build_tower()
 ```
 
-If you run the code above and visit the route `/increment` in your browser,
+If you run the code above and visit the route `/counter` in your browser,
 you will see the counter increment every time you visit the route.
 
 ## How it works

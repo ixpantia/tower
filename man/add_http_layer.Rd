@@ -20,5 +20,5 @@ The tower with the layer added
 }
 \description{
 Add an HTTP layer to a tower. This layer
-will be called before the Shiny app's httpHandler.
+will be called before the 'shiny' app's httpHandler.
 }
