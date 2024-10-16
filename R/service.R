@@ -81,10 +81,19 @@ build_http_handler <- function(tower) {
   }
 
   http_layers <- append(tower$http_layers, app_handler)
+  n_layers <- length(http_layers)
+
   next_fn <- compiler::cmpfun(
     function(req) {
-      req$LAYER_COUNTER <- req$LAYER_COUNTER + 1
-      http_layers[[req$LAYER_COUNTER]](req)
+      count <- req$LAYER_COUNTER + 1
+      if (count > n_layers) {
+        rlang::abort(
+          "No more layers left, req$NEXT was probably called more than once"
+        )
+      }
+      layer <- http_layers[[count]]
+      req$LAYER_COUNTER <- count
+      layer(req)
     },
     options = compiler_options
   )

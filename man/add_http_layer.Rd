@@ -10,10 +10,9 @@ add_http_layer(tower, layer)
 \item{tower}{A tower}
 
 \item{layer}{A function that takes a request and returns either
-a response or NULL. NULL indicates that the layer did not
-short-circuit the request, therefore the next layer should be
-called. If a response is returned, the request is short-circuited
-and the response is returned to the client.}
+a response. A layer can short circuit by returning a response
+directly or call the next layer will \code{req$NEXT(req)} which
+will call the next layer in the middleware.}
 }
 \value{
 The tower with the layer added
