@@ -1,99 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_body.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_body_json.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_cookie.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_delete_route.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_get_route.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_http_layer.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_patch_route.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_post_route.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_put_route.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_route.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_server_layer.html</loc>
-  </url>
-  <url>
-    <loc>/reference/app_into_parts.html</loc>
-  </url>
-  <url>
-    <loc>/reference/build_http_cookie.html</loc>
-  </url>
-  <url>
-    <loc>/reference/build_response.html</loc>
-  </url>
-  <url>
-    <loc>/reference/build_tower.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_tower.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/parse_cookies.html</loc>
-  </url>
-  <url>
-    <loc>/reference/print.tower.html</loc>
-  </url>
-  <url>
-    <loc>/reference/req_body_form.html</loc>
-  </url>
-  <url>
-    <loc>/reference/req_body_json.html</loc>
-  </url>
-  <url>
-    <loc>/reference/req_cookies.html</loc>
-  </url>
-  <url>
-    <loc>/reference/req_query.html</loc>
-  </url>
-  <url>
-    <loc>/reference/response_builder.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set_content_type.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set_header.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set_status.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/add_body.html</loc></url>
+<url><loc>/reference/add_body_json.html</loc></url>
+<url><loc>/reference/add_cookie.html</loc></url>
+<url><loc>/reference/add_delete_route.html</loc></url>
+<url><loc>/reference/add_get_route.html</loc></url>
+<url><loc>/reference/add_http_layer.html</loc></url>
+<url><loc>/reference/add_patch_route.html</loc></url>
+<url><loc>/reference/add_post_route.html</loc></url>
+<url><loc>/reference/add_put_route.html</loc></url>
+<url><loc>/reference/add_route.html</loc></url>
+<url><loc>/reference/add_server_layer.html</loc></url>
+<url><loc>/reference/app_into_parts.html</loc></url>
+<url><loc>/reference/build_http_cookie.html</loc></url>
+<url><loc>/reference/build_response.html</loc></url>
+<url><loc>/reference/build_tower.html</loc></url>
+<url><loc>/reference/create_tower.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/parse_cookies.html</loc></url>
+<url><loc>/reference/print.tower.html</loc></url>
+<url><loc>/reference/req_body_form.html</loc></url>
+<url><loc>/reference/req_body_json.html</loc></url>
+<url><loc>/reference/req_cookies.html</loc></url>
+<url><loc>/reference/req_query.html</loc></url>
+<url><loc>/reference/response_builder.html</loc></url>
+<url><loc>/reference/set_content_type.html</loc></url>
+<url><loc>/reference/set_header.html</loc></url>
+<url><loc>/reference/set_status.html</loc></url>
 </urlset>
+
