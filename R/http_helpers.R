@@ -10,8 +10,9 @@ add_route <- function(tower, method = "GET", path, handler) {
   handler <- compiler::cmpfun(handler)
   route_handler <- compiler::cmpfun(function(req) {
     if (req$REQUEST_METHOD == method && req$PATH_INFO == path) {
-      handler(req)
+      return(handler(req))
     }
+    req$NEXT(req)
   })
   return(add_http_layer(tower, route_handler))
 }

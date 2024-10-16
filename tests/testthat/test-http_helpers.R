@@ -257,7 +257,7 @@ test_that("can extract req body as a json on multiple layers", {
     tower::add_http_layer(function(req) {
       body <- tower::req_body_json(req)
       testthat::expect_equal(body$secret, "Hello, world!")
-      return(NULL)
+      req$NEXT(req)
     }) |>
     tower::add_post_route("/hello", function(req) {
       shiny::httpResponse(
@@ -332,7 +332,7 @@ test_that("can extract req body form on many layers", {
     tower::add_http_layer(function(req) {
       body <- tower::req_body_form(req)
       testthat::expect_equal(body$secret, "Hello, world!")
-      return(NULL)
+      req$NEXT(req)
     }) |>
     tower::add_post_route("/hello", function(req) {
       shiny::httpResponse(

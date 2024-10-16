@@ -60,6 +60,47 @@ test_that("http middleware can be forwarded", {
       if (req$PATH_INFO == "/about") {
         return(shiny::httpResponse(200, "text/plain", "About page"))
       }
+      req$NEXT(req)
+    }) |>
+    tower::build_tower()
+
+  request <- list(
+    PATH_INFO = "/",
+    REQUEST_METHOD = "GET"
+  )
+
+  parts <- app |>
+    tower::app_into_parts()
+
+  response <- parts$ui(request)
+
+  expect_equal(response$status, 200)
+  expect_equal(response$content_type, "text/html; charset=UTF-8")
+  expect_true(stringr::str_detect(response$content, "<!DOCTYPE html>"))
+
+  request <- list(
+    PATH_INFO = "/about",
+    REQUEST_METHOD = "GET"
+  )
+
+  response <- parts$ui(request)
+
+  expect_equal(response$status, 200)
+  expect_equal(response$content_type, "text/plain")
+  expect_equal(response$content, "About page")
+
+})
+
+test_that("http middleware can be forwarded with helpers", {
+  app <- shiny::shinyApp(
+    ui = shiny::fluidPage(),
+    server = function(input, output, session) {}
+  )
+
+  app <- app |>
+    tower::create_tower() |>
+    tower::add_route("GET", "/about", function(req) {
+      return(shiny::httpResponse(200, "text/plain", "About page"))
     }) |>
     tower::build_tower()
 
