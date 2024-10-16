@@ -73,16 +73,29 @@ build_http_handler <- function(tower) {
   app_handler <- compiler::cmpfun(
     tower$app$httpHandler,
     options = compiler_options
+
   )
-  http_layers <- append(tower$http_layers, app_handler)
-  handler <- function(req) {
-    for (layer in http_layers) {
-      response <- layer(req)
-      if (!is.null(response)) {
-        return(response)
-      }
-    }
+
+  # If only the app handler exists return it
+  if (length(tower$http_layers) == 0) {
+    return(compiler::cmpfun(app_handler, options = compiler_options))
   }
+
+  http_layers <- append(tower$http_layers, app_handler)
+  next_fn <- compiler::cmpfun(
+    function(req) {
+      req$LAYER_COUNTER <- req$LAYER_COUNTER + 1
+      http_layers[[req$LAYER_COUNTER]](req)
+    },
+    options = compiler_options
+  )
+
+  handler <- function(request) {
+    request$LAYER_COUNTER <- 0
+    request$NEXT <- next_fn
+    request$NEXT(request)
+  }
+
   return(compiler::cmpfun(handler, options = compiler_options))
 }
 
