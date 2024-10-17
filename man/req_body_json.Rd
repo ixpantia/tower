@@ -14,7 +14,7 @@ when parsing the request body. This will only be used the first time the
 request body is parsed. Subsequent calls will return the cached result.}
 }
 \value{
-A list containing the request body
+The R object representation of the body's JSON content
 }
 \description{
 Extracts the request body from a JSON request

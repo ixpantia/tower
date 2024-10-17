@@ -14,7 +14,7 @@ add_post_route(tower, path, handler)
 \item{handler}{A function to call when the route is matched}
 }
 \value{
-A tower object with the route added
+The tower with the added POST route
 }
 \description{
 Adds a POST route to a tower

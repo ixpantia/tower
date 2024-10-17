@@ -16,7 +16,7 @@ add_route(tower, method = "GET", path, handler)
 \item{handler}{A function to call when the layer is matched}
 }
 \value{
-A tower object with the layer added
+The tower with the added route
 }
 \description{
 Adds an HTTP layer to a tower

@@ -14,7 +14,7 @@ add_patch_route(tower, path, handler)
 \item{handler}{A function to call when the route is matched}
 }
 \value{
-A tower object with the route added
+The tower with the added PATCH route
 }
 \description{
 Adds a PATCH route to a tower

@@ -11,6 +11,9 @@
 
 \item{...}{Ignored arguments (for compatibility with print)}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Print a tower
 }

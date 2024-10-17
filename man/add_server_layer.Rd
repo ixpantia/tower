@@ -15,7 +15,7 @@ the original server function. If you want to short-circuit
 the server use an exception.}
 }
 \value{
-The tower with the layer added
+The tower with the added layer
 }
 \description{
 Add a server layer to a tower. This layer

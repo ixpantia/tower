@@ -10,7 +10,7 @@ parse_cookies(x)
 \item{x}{A string containing the cookies}
 }
 \value{
-A list containing the cookies
+A list containing the HTTP cookies
 }
 \description{
 Parses cookies from a string

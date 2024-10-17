@@ -10,7 +10,7 @@ create_tower(app)
 \item{app}{A 'shiny' app object}
 }
 \value{
-A new tower
+A new tower object to add more layers to
 }
 \description{
 Create a new tower to build upon.
