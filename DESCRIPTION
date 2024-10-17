@@ -11,6 +11,8 @@ Description: The best way to implement middle ware for 'shiny' Applications. 'to
     model for incoming HTTP requests and server sessions. 'tower' is a very minimal
     package with little overhead, it is mainly meant for other package developers
     to implement new behavior.
+URL: https://github.com/ixpantia/tower
+BugReports: https://github.com/ixpantia/tower/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
