@@ -4,7 +4,7 @@ compiler_options <- list(optimize = 3L)
 #' @title Create a new tower
 #' @description Create a new tower to build upon.
 #' @param app A 'shiny' app object
-#' @return A new tower
+#' @value A new tower object to add more layers to
 #' @export
 create_tower <- function(app) {
   structure(
@@ -21,6 +21,7 @@ create_tower <- function(app) {
 #' @description Print a tower
 #' @param x A tower
 #' @param ... Ignored arguments (for compatibility with print)
+#' @value No return value, called for side effects
 #' @export
 print.tower <- function(x, ...) {
   cat(
@@ -37,7 +38,7 @@ print.tower <- function(x, ...) {
 #'   a response. A layer can short circuit by returning a response
 #'   directly or call the next layer will `req$NEXT(req)` which
 #'   will call the next layer in the middleware.
-#' @return The tower with the layer added
+#' @value The tower with the added layer
 #' @export
 add_http_layer <- function(tower, layer) {
   tower$http_layers <- c(
@@ -57,7 +58,7 @@ add_http_layer <- function(tower, layer) {
 #'   and has no return value. This function will be called before
 #'   the original server function. If you want to short-circuit
 #'   the server use an exception.
-#' @return The tower with the layer added
+#' @value The tower with the added layer
 #' @export
 add_server_layer <- function(tower, layer) {
   tower$server_layers <- c(
@@ -137,7 +138,7 @@ build_server <- function(tower) {
 #' @description Build a 'shiny' app from a tower. This will create
 #'   a new 'shiny' app with the specified layers added.
 #' @param tower A tower
-#' @return A 'shiny' app object that can be started
+#' @value A 'shiny' app object that can be started
 #' @export
 build_tower <- function(tower) {
   app <- tower$app
@@ -149,7 +150,7 @@ build_tower <- function(tower) {
 #' @title Into parts
 #' @description Splits a shiny.appobj into its parts, the ui and server
 #' @param app A shiny.appobj
-#' @return A list with the ui and server handlers
+#' @value A list with the ui and server handlers
 #' @export
 app_into_parts <- function(app) {
   ui <- app$httpHandler

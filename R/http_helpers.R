@@ -4,7 +4,7 @@
 #' @param method A string containing the HTTP method to match
 #' @param path A string containing the path to match
 #' @param handler A function to call when the layer is matched
-#' @return A tower object with the layer added
+#' @value The tower with the added route
 #' @export
 add_route <- function(tower, method = "GET", path, handler) {
   handler <- compiler::cmpfun(handler)
@@ -22,7 +22,7 @@ add_route <- function(tower, method = "GET", path, handler) {
 #' @param tower A tower object
 #' @param path A string containing the path to match
 #' @param handler A function to call when the route is matched
-#' @return A tower object with the route added
+#' @value The tower with the added GET route
 #' @export
 add_get_route <- function(tower, path, handler) {
   add_route(tower, "GET", path, handler)
@@ -33,7 +33,7 @@ add_get_route <- function(tower, path, handler) {
 #' @param tower A tower object
 #' @param path A string containing the path to match
 #' @param handler A function to call when the route is matched
-#' @return A tower object with the route added
+#' @value The tower with the added POST route
 #' @export
 add_post_route <- function(tower, path, handler) {
   add_route(tower, "POST", path, handler)
@@ -44,7 +44,7 @@ add_post_route <- function(tower, path, handler) {
 #' @param tower A tower object
 #' @param path A string containing the path to match
 #' @param handler A function to call when the route is matched
-#' @return A tower object with the route added
+#' @value The tower with the added PUT route
 #' @export
 add_put_route <- function(tower, path, handler) {
   add_route(tower, "PUT", path, handler)
@@ -55,7 +55,7 @@ add_put_route <- function(tower, path, handler) {
 #' @param tower A tower object
 #' @param path A string containing the path to match
 #' @param handler A function to call when the route is matched
-#' @return A tower object with the route added
+#' @value The tower with the added DELETE route
 #' @export
 add_delete_route <- function(tower, path, handler) {
   add_route(tower, "DELETE", path, handler)
@@ -66,7 +66,7 @@ add_delete_route <- function(tower, path, handler) {
 #' @param tower A tower object
 #' @param path A string containing the path to match
 #' @param handler A function to call when the route is matched
-#' @return A tower object with the route added
+#' @value The tower with the added PATCH route
 #' @export
 add_patch_route <- function(tower, path, handler) {
   add_route(tower, "PATCH", path, handler)
@@ -78,7 +78,7 @@ add_patch_route <- function(tower, path, handler) {
 #' @param ... Additional arguments to pass to \code{\link[jsonlite]{fromJSON}}
 #'   when parsing the request body. This will only be used the first time the
 #'   request body is parsed. Subsequent calls will return the cached result.
-#' @return A list containing the request body
+#' @value The R object representation of the body's JSON content
 #' @export
 req_body_json <- function(req, ...) {
   if (!is.null(req[[".parsed.body.json"]])) {
@@ -100,7 +100,7 @@ req_body_json <- function(req, ...) {
 #' @title Extract form data from a request
 #' @description Extracts form data from a request
 #' @param req A request object
-#' @return A list containing the form data
+#' @value A list containing the form data in the body
 #' @export
 req_body_form <- function(req) {
   if (!is.null(req[[".parsed.body.form"]])) {
@@ -120,7 +120,7 @@ req_body_form <- function(req) {
 #' @title Extract query parameters from a request
 #' @description Extracts query parameters from a request
 #' @param req A request object
-#' @return A list containing the query parameters
+#' @value A list containing the query parameters
 #' @export
 req_query <- function(req) {
   if (!is.null(req[[".parsed.query"]])) {
@@ -152,7 +152,7 @@ cookie_unescape <- function(.x) {
 #'
 #' @param x A string containing the cookies
 #'
-#' @return A list containing the cookies
+#' @value A list containing the HTTP cookies
 #' @keywords internal
 parse_cookies <- function(x) {
   if (is.null(x)) {
@@ -178,7 +178,7 @@ cookie_to_header <- function(.x, .y) {
 #' @param key A string containing the cookie key
 #' @param value A string containing the cookie value
 #'
-#' @return A string containing the cookie
+#' @value A string containing the formated cookie
 #' @export
 build_http_cookie <- function(key, value) {
   glue::glue("{key}={value}; path=/; SameSite=Lax; HttpOnly")
@@ -187,7 +187,7 @@ build_http_cookie <- function(key, value) {
 #' @title Extract cookies from a request
 #' @description Extracts cookies from a request
 #' @param req A request object
-#' @return A list containing the cookies
+#' @value A list containing the cookies
 #' @export
 req_cookies <- function(req) {
   if (!is.null(req[[".parsed.cookies"]])) {
