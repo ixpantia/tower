@@ -12,7 +12,7 @@ build_http_cookie(key, value)
 \item{value}{A string containing the cookie value}
 }
 \value{
-A string containing the cookie
+A string containing the formated cookie
 }
 \description{
 Builds an HttpOnly cookie from a key and value

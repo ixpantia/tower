@@ -14,7 +14,7 @@ add_put_route(tower, path, handler)
 \item{handler}{A function to call when the route is matched}
 }
 \value{
-A tower object with the route added
+The tower with the added PUT route
 }
 \description{
 Adds a PUT route to a tower

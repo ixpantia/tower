@@ -10,7 +10,7 @@ build_response(res)
 \item{res}{A response builder object}
 }
 \value{
-A response object
+A 'shiny' response object
 }
 \description{
 Builds a response

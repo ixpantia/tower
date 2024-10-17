@@ -10,7 +10,7 @@ req_body_form(req)
 \item{req}{A request object}
 }
 \value{
-A list containing the form data
+A list containing the form data in the body
 }
 \description{
 Extracts form data from a request

@@ -15,7 +15,7 @@ directly or call the next layer will \code{req$NEXT(req)} which
 will call the next layer in the middleware.}
 }
 \value{
-The tower with the layer added
+The tower with the added layer
 }
 \description{
 Add an HTTP layer to a tower. This layer

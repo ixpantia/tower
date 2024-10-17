@@ -1,6 +1,6 @@
 #' @title Create a response builder
 #' @description Creates a response builder
-#' @value A response builder object
+#' @return A response builder object
 #' @export
 response_builder <- function() {
   resp <- new.env(parent = emptyenv())
@@ -20,7 +20,7 @@ response_builder <- function() {
 #' @param res A response builder object
 #' @param name The name of the header
 #' @param value The value of the header
-#' @value The response builder object
+#' @return The response builder object
 #' @export
 set_header <- function(res, name, value) {
   res$headers[[name]] <- value
@@ -31,7 +31,7 @@ set_header <- function(res, name, value) {
 #' @description Sets the status of a response
 #' @param res A response builder object
 #' @param status The status to set
-#' @value The response builder object
+#' @return The response builder object
 #' @export
 set_status <- function(res, status) {
   res$status <- status
@@ -43,7 +43,7 @@ set_status <- function(res, status) {
 #' @param res A response builder object
 #' @param name The name of the cookie
 #' @param value The value of the cookie
-#' @value The response builder object
+#' @return The response builder object
 #' @export
 add_cookie <- function(res, name, value) {
   res$cookies[[name]] <- value
@@ -54,7 +54,7 @@ add_cookie <- function(res, name, value) {
 #' @description Sets the content type of a response
 #' @param res A response builder object
 #' @param content_type The content type to set
-#' @value The response builder object
+#' @return The response builder object
 #' @export
 set_content_type <- function(res, content_type) {
   res$content_type <- content_type
@@ -111,7 +111,7 @@ serialize_body <- function(body, content_type) {
 #' @description Adds a body to a response, if no content type is set, it will be detected
 #' @param res A response builder object
 #' @param body The body to add
-#' @value The response builder object
+#' @return The response builder object
 #' @export
 add_body <- function(res, body) {
   if (is.null(res$content_type)) {
@@ -125,7 +125,7 @@ add_body <- function(res, body) {
 #' @description Adds a body to a response as JSON
 #' @param res A response builder object
 #' @param body The body to add
-#' @value The response builder object
+#' @return The response builder object
 #' @export
 add_body_json <- function(res, body) {
   set_content_type(res, "application/json")
@@ -136,7 +136,7 @@ add_body_json <- function(res, body) {
 #' @title Build a response
 #' @description Builds a response
 #' @param res A response builder object
-#' @value A 'shiny' response object
+#' @return A 'shiny' response object
 #' @export
 build_response <- function(res) {
   content_type <- ifelse(

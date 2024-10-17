@@ -14,7 +14,7 @@ add_get_route(tower, path, handler)
 \item{handler}{A function to call when the route is matched}
 }
 \value{
-A tower object with the route added
+The tower with the added GET route
 }
 \description{
 Adds a GET route to a tower

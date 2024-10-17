@@ -14,7 +14,7 @@ add_delete_route(tower, path, handler)
 \item{handler}{A function to call when the route is matched}
 }
 \value{
-A tower object with the route added
+The tower with the added DELETE route
 }
 \description{
 Adds a DELETE route to a tower
